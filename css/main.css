@@ -24,3 +24,10 @@
 	height: 50px;
 	width: 100%;
 }
+
+#errorMessageBox{
+	display: none;
+	background-color: #FF0000;
+	padding: 20px;
+	text-align: center;
+}

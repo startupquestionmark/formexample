@@ -7,23 +7,32 @@
 
 <body>
 	<div class="form-container">
-		<h1>Sign Up</h1>
+		<h1>Join Today!</h1>
+
+		<div id="errorMessageBox">
+			Error submitting form. Please correct the inputs highlighted in red below.
+			<span id="missingVariable"></span>
+		</div>
+
 		<form id="testForm">
-			<input id="firstName" type="text" name="firstname" required/>
-			<input id="lastName" type="text" name="lastname"/>
-			<input type="email" name="email"/>
-			<input type="password" name="password"/>
-			<input type="password" name="passwordconfirmation"/>
-			<input type="text" name="creditcard"/>
-			<input type="submit" value="Submit"/>
+			<div>
+				<input id="firstName" type="text" name="firstname" class="half-input-width" placeholder="First Name" />
+				<input id="lastName" type="text" name="lastname" class="half-input-width" placeholder="Last Name" />
+			</div>
+			<div>
+				<input type="email" name="email" placeholder="E-mail" class="half-input-width" />
+				<input type="text" name="phoneNumber" placeholder="Phone Number" class="half-input-width" />
+			</div>
+			<input type="password" name="password" placeholder="Password" />
+			<input type="password" name="passwordconfirmation" placeholder="Password Confirmation" />
+			<input type="text" name="creditcard" placeholder="Credit Card #" maxlength="16"/>
+			<button name="submit" type="submit">Submit Form</button>
 		</form>
 		<div id="errorMessageBox">
 			Error! Missing: 
 			<span id="missingVariable"></span>
 		</div>
 	</div>
-
-
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

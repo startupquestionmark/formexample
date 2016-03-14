@@ -1,33 +1,87 @@
-.form-container {
-	margin : 200px auto 0px auto;
-	height: auto;
-	width: 300px;
-	padding: 30px;
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
 
-	background-color: #F0F0F0;
-	border-color: #000000;
+.form-container {
+	margin : 100px auto 0px auto;
+	height: auto;
+	width: 700px;
+	padding: 48px;
+
+	background-color: #FFFFFF;
+	border: 1px solid #E0E0E0;
 	border-radius: 5px;
 	text-align: center;
+}
+h1 { 
+	margin: 0;
+	margin-bottom:20px;
+}
+
+input::-webkit-input-placeholder {
+	font-size: 14px;
+	line-height: 1;
+}
+input:-moz-placeholder {
+	font-size: 14px;  
+	line-height: 1;
+}
+input::-moz-placeholder {
+	font-size: 14px;
+	line-height: 1;
+}
+input:-ms-input-placeholder {  
+	font-size: 14px;
+	line-height: 1;
 }
 
 .form-container form input[type="text"], 
 .form-container form input[type="email"], 
 .form-container form input[type="password"] {
-	height: 50px;
+	float: left;
+	height: 48px;
 	width: 100%;
-	margin: 5px auto;
+	padding: 4px 12px;
+	margin: 4px auto;
 	border-radius: 5px;
-	border: 1px solid #E0E0E0;
+	border: 1px solid #E8E8E8;
+
+	font-size: 14px;
 }
 
-.form-container form input[type="submit"] {
-	height: 50px;
-	width: 100%;
+.form-container form button[type="submit"] {
+	height: 48px;
+	width: 50%;
+	margin: 24px auto 0px auto;
+	border-radius: 5px;
+	border: 1px solid #2e6da4;
+	background-color: #337ab7;
+	color: #FFFFFF;
+	font-size: 14px;
+}
+
+.form-container form input.half-input-width {
+	width: 49.5%;
+}
+.form-container form input.half-input-width:first-child {
+	margin-right: 1%;
+}
+
+.form-container form input.hasError {
+	border-color: #d9534f;
+}
+.form-container form input.correctInput {
+	border-color: #337AB7;
 }
 
 #errorMessageBox{
 	display: none;
-	background-color: #FF0000;
+	margin: 12px auto;
 	padding: 20px;
 	text-align: center;
+	background-color: #d9534f;
+	border: 1px solid #d43f3a;	
+	border-radius: 5px;
+	color: #FFFFFF;
 }

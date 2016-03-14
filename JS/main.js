@@ -1,27 +1,50 @@
 $(function(){
 
 	$("#testForm").submit(function (e) {
-		e.preventDefault();
 
-		var firstName = $("#firstName").val();
-		if (firstName == null || firstName.length <= 0) {
-			showErrors("First Name");
-			return;	
+		var $this = $(this);
+
+		// General syntax for HTML objects --> var $input = $(input);
+		// General syntax for normal variables --> var number = 3;
+
+		// Array containing input HTML elements
+		var $formInputs = $('.form-container form input');
+
+		// Variable that tracks errors for each submission
+		var formHasError = false;
+		
+		// Loop through the inputs array and check if there are valid variables
+		for(var i = 0; i < $formInputs.length; i++) {
+
+			// Normally I would use a $formInputs[i] here, but for some reason it doesn't work.
+			// According to the docs, you have to use eq(i) to access the jQuery object
+			var content = $formInputs.eq(i).val();
+
+			if(content == null || content.length <= 0) {
+				$formInputs.eq(i).addClass('hasError');
+				formHasError = true;
+			} else {
+				$formInputs.eq(i).removeClass('hasError');
+				$formInputs.eq(i).addClass('correctInput');
+			}
 		}
 
-		var lastName = $("#lastName").val();
-		if (lastName == null || lastName.length <= 0) {
-			$('#errorMessageBox').show();
-			$('#missingVariable').text("Last Name");
-			return;
+		console.log(formHasError);
+		if(formHasError) {
+			showErrors();
+			return false;
+		} else {
+			hideErrors();
+			return true;
 		}
-
 
 	});
 
-	function showErrors(errorMessage) {
-		$('#errorMessageBox').show();
-		$('#missingVariable').text(errorMessage);
+	function showErrors() {
+		$('#errorMessageBox').fadeIn();
 	}
 
+	function hideErrors() {
+		$('#errorMessageBox').fadeOut();
+	}
 });

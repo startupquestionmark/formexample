@@ -1,8 +1,7 @@
 $(function(){
 
 	$("#testForm").submit(function (e) {
-
-		var $this = $(this);
+		e.preventDefault();
 
 		// General syntax for HTML objects --> var $input = $(input);
 		// General syntax for normal variables --> var number = 3;
@@ -34,7 +33,7 @@ $(function(){
 			showErrors();
 			return false;
 		} else {
-			hideErrors();
+			showSuccess();
 			return true;
 		}
 
@@ -44,7 +43,11 @@ $(function(){
 		$('#errorMessageBox').fadeIn();
 	}
 
-	function hideErrors() {
+	function showSuccess() {
 		$('#errorMessageBox').fadeOut();
+		$('#successMessageBox').fadeIn();
+		$('input').val("");
+		$('input').removeClass("correctInput");
+		$('input').removeClass("hasError");
 	}
 });

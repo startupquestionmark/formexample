@@ -72,16 +72,22 @@ input:-ms-input-placeholder {
 	border-color: #d9534f;
 }
 .form-container form input.correctInput {
-	border-color: #337AB7;
+	border-color: #5cb85c;
 }
 
-#errorMessageBox{
+.alertBox {
 	display: none;
 	margin: 12px auto;
 	padding: 20px;
 	text-align: center;
-	background-color: #d9534f;
-	border: 1px solid #d43f3a;	
 	border-radius: 5px;
 	color: #FFFFFF;
+}
+#errorMessageBox{
+	background-color: #d9534f;
+	border: 1px solid #d43f3a;	
+}
+#successMessageBox{
+	background-color: #5cb85c;
+	border: 1px solid #4cae4c;	
 }

@@ -9,9 +9,13 @@
 	<div class="form-container">
 		<h1>Join Today!</h1>
 
-		<div id="errorMessageBox">
+		<div id="errorMessageBox" class="alertBox">
 			Error submitting form. Please correct the inputs highlighted in red below.
 			<span id="missingVariable"></span>
+		</div>
+
+		<div id="successMessageBox" class="alertBox">
+			Successfully submitted form!
 		</div>
 
 		<form id="testForm">
@@ -28,10 +32,6 @@
 			<input type="text" name="creditcard" placeholder="Credit Card #" maxlength="16"/>
 			<button name="submit" type="submit">Submit Form</button>
 		</form>
-		<div id="errorMessageBox">
-			Error! Missing: 
-			<span id="missingVariable"></span>
-		</div>
 	</div>
 
 
